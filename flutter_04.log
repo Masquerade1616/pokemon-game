@@ -1,0 +1,82 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter run --machine --start-paused -d emulator-5554 --devtools-server-address http://127.0.0.1:9100/ --target lib\main.dart
+
+## exception
+
+_InternalError: InternalError: 'Failed to create ZLibDeflateFilter'
+
+```
+#0      _ZLibDeflateFilter._init (dart:io-patch/filter_patch.dart:30:53)
+#1      new _ZLibDeflateFilter (dart:io-patch/filter_patch.dart:26:5)
+#2      RawZLibFilter._makeZLibDeflateFilter (dart:io-patch/filter_patch.dart:44:11)
+#3      new _ZLibEncoderSink._ (dart:io/data_transformer.dart:469:27)
+#4      ZLibEncoder.startChunkedConversion (dart:io/data_transformer.dart:325:16)
+#5      new _ConverterStreamEventSink (dart:convert/chunked_conversion.dart:69:34)
+#6      Converter.bind.<anonymous closure> (dart:convert/converter.dart:46:37)
+#7      new _SinkTransformerStreamSubscription (dart:async/stream_transformers.dart:47:30)
+#8      _BoundSinkStream.listen (dart:async/stream_transformers.dart:171:9)
+#9      _HttpOutgoing.addStream (dart:_http/http_impl.dart:1785:22)
+#10     _StreamSinkImpl.addStream.targetAddStream (dart:_http/http_impl.dart:925:22)
+#11     _StreamSinkImpl.addStream (dart:_http/http_impl.dart:931:36)
+#12     _HttpOutboundMessage.addStream (dart:_http/http_impl.dart:1145:20)
+#13     _DevFSHttpWriter._startWrite (package:flutter_tools/src/devfs.dart:357:23)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, 3.3.9, on Microsoft Windows [Version 10.0.19044.2364], locale tr-TR)
+    • Flutter version 3.3.9 on channel stable at C:\src
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision b8f7f1f986 (6 weeks ago), 2022-11-23 06:43:51 +0900
+    • Engine revision 857bd6b74c
+    • Dart version 2.18.4
+    • DevTools version 2.15.0
+
+[!] Android toolchain - develop for Android devices (Android SDK version 33.0.0)
+    • Android SDK at C:\Users\klkil\AppData\Local\Android\sdk
+    • Platform android-33, build-tools 33.0.0
+    • Java binary at: D:\androidstudo\jre\bin\java
+    ✗ Could not determine java version
+
+[✓] Chrome - develop for the web
+    • Chrome at C:\Program Files\Google\Chrome\Application\chrome.exe
+
+[!] Visual Studio - develop for Windows (Visual Studio Community 2022 17.3.6)
+    • Visual Studio at C:\Program Files\Microsoft Visual Studio\2022\Community
+    • Visual Studio Community 2022 version 17.3.32929.385
+    ✗ Visual Studio is missing necessary components. Please re-run the Visual Studio installer for the "Desktop development with C++" workload, and include these components:
+        MSVC v142 - VS 2019 C++ x64/x86 build tools
+         - If there are multiple build tool versions available, install the latest
+        C++ CMake tools for Windows
+        Windows 10 SDK
+
+[!] Android Studio (version 2021.3)
+    • Android Studio at D:\androidstudo
+    • Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    • Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+    ✗ Unable to determine bundled Java version.
+    • Try updating or re-installing Android Studio.
+
+[✓] VS Code
+    • VS Code at C:\Users\klkil\AppData\Local\Programs\Microsoft VS Code
+    • Flutter extension version 3.56.0
+
+[✓] Connected device (4 available)
+    • sdk gphone64 x86 64 (mobile) • emulator-5554 • android-x64    • Android 13 (API 33) (emulator)
+    • Windows (desktop)            • windows       • windows-x64    • Microsoft Windows [Version 10.0.19044.2364]
+    • Chrome (web)                 • chrome        • web-javascript • Google Chrome 108.0.5359.125
+    • Edge (web)                   • edge          • web-javascript • Microsoft Edge 108.0.1462.54
+
+[✓] HTTP Host Availability
+    • All required HTTP hosts are available
+
+! Doctor found issues in 3 categories.
+```
