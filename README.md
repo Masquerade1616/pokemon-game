@@ -24,4 +24,4 @@ samples, guidance on mobile development, and a full API reference.
 
 If you have some questions regarding FlutLab, you can ask on https://flutlab.io/faq
 
-![pokemon](https://user-images.githubusercontent.com/108594420/210828722-fd8ff241-4279-47cd-b26e-2c2684f2e58d.jpg)
+
